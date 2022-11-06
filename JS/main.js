@@ -27,6 +27,7 @@ const keys = [
         ['p','P'],
         ['`','^'],
         ['+','*'],
+        ['DELETE', 'DELETE'],
         
     ],
     [
@@ -80,6 +81,9 @@ function renderKeyboard () {
             if(key[0] === 'MAYUS'){
                 return `<button class="key key-mayus ${mayus ? 'activated' : ''}">${key[0]}</button>`;
             }
+            if (key[0] === 'DELETE') {
+                return `<button class="key key-delete">${key[0]}</button>`
+            }
             if (key[0] === 'SPACE'){
                 return `<button class="key key-space"></button>`;
             }
@@ -118,7 +122,14 @@ function renderKeyboard () {
                     mayus = !mayus;
                 } else if (key.textContent === '') {
                     current.value += ' ';
-                }else {
+                }else if (key.textContent === 'DELETE') {
+                    let aux = [];
+                    aux = current.value.split('');
+                    console.log(aux)
+                    aux =  aux.pop(aux.length-1, aux.length);
+                    console.log(aux)
+                    
+                } else {
                     current.value += key.textContent.trim();
                     if (shift) {
                         shift = false;
