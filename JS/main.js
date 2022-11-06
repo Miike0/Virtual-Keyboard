@@ -75,13 +75,13 @@ function renderKeyboard () {
     const layers = keys.map((layer) => {
         return layer.map(key => {
             if (key[0] === 'SHIFT') {
-                return `<button class="key key-shift">${key[0]}</button>`;
+                return `<button class="key key-shift ${shift ? 'activated' : ''}"}>${key[0]}</button>`;
             }
             if(key[0] === 'MAYUS'){
-                return `<button class="key key-mayus">${key[0]}</button>`;
+                return `<button class="key key-mayus ${mayus ? 'activated' : ''}">${key[0]}</button>`;
             }
             if (key[0] === 'SPACE'){
-                return `<button class="key key-shift"></button>`;
+                return `<button class="key key-space"></button>`;
             }
 
             return `<button class="key key-normal">
