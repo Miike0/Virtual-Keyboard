@@ -6,6 +6,6 @@ It was built with the intention of practicing general JS, but with more emphasis
 ## Tools
 
 It's builded with:
--HTML
--CSS
--JavaScript
+- HTML
+- CSS
+- JavaScript
