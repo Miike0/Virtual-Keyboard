@@ -115,6 +115,8 @@ function renderKeyboard () {
 
     document.querySelectorAll('.key').forEach(key =>{
         key.addEventListener('click', e => {
+            let copy = '';
+            let aux = [];
             if (current) {
                 if (key.textContent === 'SHIFT') {
                     shift = !shift;
@@ -123,11 +125,11 @@ function renderKeyboard () {
                 } else if (key.textContent === '') {
                     current.value += ' ';
                 }else if (key.textContent === 'DELETE') {
-                    let aux = [];
+
                     aux = current.value.split('');
-                    console.log(aux)
-                    aux =  aux.pop(aux.length-1, aux.length);
-                    console.log(aux)
+                    aux = aux.splice(0, aux.length - 1);
+                    current.value = aux.join('');
+
                     
                 } else {
                     current.value += key.textContent.trim();
