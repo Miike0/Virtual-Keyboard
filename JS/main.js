@@ -150,4 +150,3 @@ document.querySelectorAll('input').forEach((input) => {
 });
 
 renderKeyboard();
-//2:13:33
